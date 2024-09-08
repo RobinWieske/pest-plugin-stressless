@@ -28,7 +28,7 @@ final class Run
     /**
      * Creates a new run instance.
      *
-     * @param  array{vus: int, duration: string, method: string, payload: array<string, mixed>, throw: boolean}  $options
+     * @param  array{vus: int, duration: string, method: string, payload: array<string, mixed>, throw: bool}  $options
      */
     public function __construct(
         readonly private Url $url,
@@ -99,7 +99,7 @@ final class Run
         $result = new Result($this->url, $metrics); // @phpstan-ignore-line
 
         if ($this->verbose) {
-            $detail = new Detail();
+            $detail = new Detail;
 
             $detail->print($result);
         }

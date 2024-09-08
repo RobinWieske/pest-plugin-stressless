@@ -104,7 +104,7 @@ final class Factory
     /**
      * Force the test to use options method
      *
-     * @param  array<string, mixed>  $payload The payload to send with the OPTIONS request
+     * @param  array<string, mixed>  $payload  The payload to send with the OPTIONS request
      */
     public function options(array $payload = []): self
     {
@@ -117,7 +117,7 @@ final class Factory
     /**
      * Force the test to use patch method
      *
-     * @param  array<string, mixed>  $payload The payload to send with the PATCH request
+     * @param  array<string, mixed>  $payload  The payload to send with the PATCH request
      */
     public function patch(array $payload = []): self
     {
@@ -130,7 +130,7 @@ final class Factory
     /**
      * Force the test to use put method
      *
-     * @param  array<string, mixed>  $payload The payload to send with the PUT request
+     * @param  array<string, mixed>  $payload  The payload to send with the PUT request
      */
     public function put(array $payload = []): self
     {
@@ -143,7 +143,7 @@ final class Factory
     /**
      * Force the test to use post method
      *
-     * @param  array<string, mixed>  $payload The payload to send with the POST request
+     * @param  array<string, mixed>  $payload  The payload to send with the POST request
      */
     public function post(array $payload): self
     {

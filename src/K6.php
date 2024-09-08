@@ -118,7 +118,7 @@ final readonly class K6 implements Stringable
      */
     private static function extractZip(string $fileName): void
     {
-        $zip = new ZipArchive();
+        $zip = new ZipArchive;
 
         if ($zip->open(self::BIN_DIR.$fileName) !== true) {
             throw new RuntimeException('Unable to open k6 zip archive.');
