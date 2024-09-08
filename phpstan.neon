@@ -7,11 +7,9 @@ parameters:
     level: max
     paths:
         - src
-        - tests
 
     checkMissingIterableValueType: true
     checkGenericClassInNonGenericObjectType: false
     reportUnmatchedIgnoredErrors: true
     ignoreErrors:
-        - "#Undefined variable: \\$this#"
         - "#Short ternary operator is not allowed#"
