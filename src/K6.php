@@ -80,9 +80,19 @@ final readonly class K6 implements Stringable
         $url = sprintf(self::K6_URL, self::K6_VERSION, self::K6_VERSION, $os, $arch, $extension);
         $fileName = basename($url);
 
-        if (false === ($binary = file_get_contents($url))) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+
+        $binary = curl_exec($ch);
+
+        if (false === $binary || 200 !== curl_getinfo($ch, CURLINFO_HTTP_CODE)) {
+            curl_close($ch);
             throw new RuntimeException('Unable to download k6 binary.');
         }
+
+        curl_close($ch);
 
         if (file_put_contents(self::BIN_DIR.$fileName, $binary) === false) {
             throw new RuntimeException('Unable to save k6 binary.');
